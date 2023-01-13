@@ -15,4 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const userblocks = []
   const botblocks = []
+  let ifHorizontal = true
+  let ifGameOver = false
+  let currentPlayer = 'player'
 })
