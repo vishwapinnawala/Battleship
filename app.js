@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Variables
   const userboard = document.querySelector('.usergrid')
   const botboard = document.querySelector('.computergrid')
   const displayboard = document.querySelector('.shipselector')
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentPlayer = 'player'
   let width=10
 
-  function generateboard(grid, blocks) {
+  function generateboard(grid, blocks) {//Generating the game grid
     for (let i = 0; i < width*width; i++) {
       const block = document.createElement('div')
       block.dataset.id = i
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   
 
-  const shipsarray = [
+  const shipsarray = [//Making the ship sizes
     {name: 'destroyer',directions: [[0, 1],[0, width]]},
     {name: 'submarine',directions: [[0, 1, 2],[0, width, width*2]]},
     {name: 'cruiser',directions: [[0, 1, 2],[0, width, width*2]]},
