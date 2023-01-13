@@ -66,5 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     else generate(ship)
   }
+  for (let i = 0; i < 5; i++) {
+    generate(shipsarray[i])
+  }
 
 })
