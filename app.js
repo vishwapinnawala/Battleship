@@ -28,4 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
       blocks.push(block) 
     }
   }
+  generateboard(userboard, userblocks)
+  generateboard(botboard, botblocks)
 })
