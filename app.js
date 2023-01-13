@@ -5,4 +5,5 @@ document.addEventListener('DOMContentLoaded', () => {
   const ships = document.querySelectorAll('.ships')
   const destroyer = document.querySelector('.destroyerwrap')
   const submarine = document.querySelector('.submarinewrap')
+  const cruiser = document.querySelector('.cruiserwrap')
 })
