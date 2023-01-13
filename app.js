@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
   for (let i = 0; i < 5; i++) {
     generate(shipsarray[i])
   }
-  
+
   function rotate() {
     if (ifHorizontal) {
       destroyer.classList.toggle('destroyer_verticle')//Css
@@ -90,5 +90,6 @@ document.addEventListener('DOMContentLoaded', () => {
       return
     }
   }
+  rotatebtn.addEventListener('click', rotate)
 
 })
