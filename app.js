@@ -38,8 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
     {name: 'carrier',directions: [[0, 1, 2, 3, 4],[0, width, width*2, width*3, width*4]]},
   ]
 
-  generateboard(userboard, userblocks)
-  generateboard(botboard, botblocks)
+  generateboard(userboard, userblocks)//generating the players board
+  generateboard(botboard, botblocks) // generting the computers board
 
   function generate(ship) {
     let randmdirection = Math.floor(Math.random() * ship.directions.length)
