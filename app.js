@@ -41,4 +41,30 @@ document.addEventListener('DOMContentLoaded', () => {
   generateboard(userboard, userblocks)
   generateboard(botboard, botblocks)
 
+  function generate(ship) {
+    let randmdirection = Math.floor(Math.random() * ship.directions.length)
+    let current = ship.directions[randmdirection]
+    if (randmdirection === 0)
+    {
+      direction = 1
+    } 
+    if (randmdirection === 1) 
+    {
+      direction = 10
+    }
+    let randmstart = Math.abs(
+      Math.floor(
+        Math.random() * botblocks.length - (
+          ship.directions[0].length * direction )))
+
+    const iftaken = current.some(index => botblocks[randmstart + index].classList.contains('taken'))
+    const ifatrightedge = current.some(index => (randmstart + index) % width === width - 1)
+    const ifatleftedge = current.some(index => (randmstart + index) % width === 0)
+
+    if (!iftaken && !ifatrightedge && !ifatleftedge) current.forEach(index => 
+      botblocks[randmstart + index].classList.add('taken', ship.name))
+
+    else generate(ship)
+  }
+
 })
