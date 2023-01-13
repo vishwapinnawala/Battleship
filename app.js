@@ -12,4 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const rotatebtn = document.querySelector('#rotatebtn')
   const yourturn = document.querySelector('#yourgo')
   const showdetails = document.querySelector('#detail')
+
+  const userblocks = []
+  const botblocks = []
 })
