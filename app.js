@@ -69,5 +69,26 @@ document.addEventListener('DOMContentLoaded', () => {
   for (let i = 0; i < 5; i++) {
     generate(shipsarray[i])
   }
+  
+  function rotate() {
+    if (ifHorizontal) {
+      destroyer.classList.toggle('destroyer_verticle')//Css
+      submarine.classList.toggle('submarine_verticle')
+      cruiser.classList.toggle('cruiser_verticle')
+      battleship.classList.toggle('battleship_verticle')
+      carrier.classList.toggle('carrier_verticle')
+      ifHorizontal = false      
+      return
+    }
+    if (!ifHorizontal) {
+      destroyer.classList.toggle('destroyer_verticle')
+      submarine.classList.toggle('submarine_verticle')
+      cruiser.classList.toggle('cruiser_verticle')
+      battleship.classList.toggle('battleship_verticle')
+      carrier.classList.toggle('carrier_verticle')
+      ifHorizontal = true
+      return
+    }
+  }
 
 })
