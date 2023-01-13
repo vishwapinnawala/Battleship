@@ -104,5 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
   let selectedship
   let selectedshiplegth
 
+  ships.forEach(ship => ship.addEventListener('mousedown', (targeta) => {selectshipindex = targeta.target.id}))
+
 
 })
