@@ -18,4 +18,14 @@ document.addEventListener('DOMContentLoaded', () => {
   let ifHorizontal = true
   let ifGameOver = false
   let currentPlayer = 'player'
+
+
+  function generateboard(grid, blocks) {
+    for (let i = 0; i < 10*10; i++) {
+      const block = document.createElement('div')
+      block.dataset.id = i
+      grid.appendChild(block)
+      blocks.push(block) 
+    }
+  }
 })
