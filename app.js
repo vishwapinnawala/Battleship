@@ -122,7 +122,9 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
     let newNotAllowedHorizontal = notAllowedHorizontal.splice(0, 10 * lastship)
     let newNotAllowedVertical = notAllowedVertical.splice(0, 10 * lastship)
 
-    
+    selectedShipIndex = parseInt(selectshipindex.substr(-1))
+
+    lastshipid = lastshipid - selectedShipIndex
   }
 
 })
