@@ -18,10 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
   let ifHorizontal = true
   let ifGameOver = false
   let currentPlayer = 'player'
-
+  let width=10
 
   function generateboard(grid, blocks) {
-    for (let i = 0; i < 10*10; i++) {
+    for (let i = 0; i < width*width; i++) {
       const block = document.createElement('div')
       block.dataset.id = i
       grid.appendChild(block)
