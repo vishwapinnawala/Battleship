@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
   const carrier = document.querySelector('.carrierwrap')
   const startbtn = document.querySelector('#startbtn')
   const rotatebtn = document.querySelector('#rotatebtn')
-  const multibtn = document.querySelector('#singleplayerbtn')
-  const singlebtn = document.querySelector('#multiplayerbtn')
+  const singlebtn = document.querySelector('#singleplayerbtn')
+  const multibtn = document.querySelector('#multiplayerbtn')
   const yourturn = document.querySelector('#yourgo')
   const showdetails = document.querySelector('#detail')
   let gamemod=""
@@ -22,20 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
   let enemystatus=false
   let shipsplaced=false
   let boomfires=-1
-  const socket=io();
-
+  
 singlebtn.addEventListener('click',beginsingleplayer)
 multibtn.addEventListener('click',beginmultiplayer)
   
-function beginsingleplayer(){
-  gamemod="single"
-
-  for (let i = 0; i < 5; i++) {
-    generate(shipsarray[i])
-  }
-  startbtn.addEventListener('click', singleplayfunct)
-}
-
   const userblocks = []
   const botblocks = []
   let ifHorizontal = true
@@ -43,16 +33,33 @@ function beginsingleplayer(){
   let currentPlayer = 'player'
   let width=10
 
-  socket.on('playerno',num=>{
-    if(num==-1){
-      showdetails.innerHTML="Sorry! We are Full!!!"
+  
+
+  function beginmultiplayer(){
+    gamemode="multi"
+    const socket=io();
+
+    socket.on('playerno',num=>{
+      if(num==-1){
+        showdetails.innerHTML="Sorry! We are Full!!!"
+      }
+      else{
+        playernum=parseInt(num)
+        if(playernum==1) currentPlayer="Enemy"
+        console.log('Enemy is '+playernum)
+      }
+    })
+
+  }
+
+  function beginsingleplayer(){
+    gamemod="single"
+  
+    for (let i = 0; i < 5; i++) {
+      generate(shipsarray[i])
     }
-    else{
-      playernum=parseInt(num)
-      if(playernum==1) currentPlayer="Enemy"
-      console.log('Enemy is '+playernum)
-    }
-  })
+    startbtn.addEventListener('click', singleplayfunct)
+  }
 
   function generateboard(grid, blocks) {//Generating the game grid
     for (let i = 0; i < width*width; i++) {
