@@ -243,6 +243,18 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
       showdetails.innerHTML = "Bot's Carrier Destroyed"
       botCarrierC = 10
     }
+    if (
+      (destroyerC + submarineC + cruiserC + battleshipC + carrierC) === 50) 
+    {
+      showdetails.innerHTML = "You Won :)"
+      finish()
+    }
+    if (
+      (botDestroyerC + botSubmarineC + botCruiserC + botBattleshipC + botCarrierC) === 50) 
+    {
+      showdetails.innerHTML = "Bot Won :("
+      finish()
+    }
   
   }
 
