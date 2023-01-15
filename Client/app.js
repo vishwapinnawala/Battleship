@@ -1,4 +1,4 @@
-const { Console } = require("console")
+
 
 document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Variables
   const userboard = document.querySelector('.usergrid')
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
     else{
       playernum=parseInt(num)
       if(playernum==1) currentPlayer="Enemy"
-      Console.log('Enemy is '+playernum)
+      console.log('Enemy is '+playernum)
     }
   })
 
