@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
     if (ifGameOver) return
     if (currentPlayer === 'player') {
       yourturn.innerHTML = 'Play Now'
-      botblocks.forEach(square => square.addEventListener('click', function(e) {revealSquare(square) }))
+      botblocks.forEach(square => square.addEventListener('click', function(e) {showblocks(square) }))
     }
     if (currentPlayer === 'bot') {
       yourturn.innerHTML = "Computer's Turn"//error??????
@@ -161,6 +161,25 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
   let cruiserC = 0
   let battleshipC = 0
   let carrierC = 0
+
+  
+  function showblocks(square) {
+    if (!square.classList.contains('boom')) {
+      if (square.classList.contains('destroyer')) destroyerC++
+      if (square.classList.contains('submarine')) submarineC++
+      if (square.classList.contains('cruiser')) cruiserC++
+      if (square.classList.contains('battleship')) battleshipC++
+      if (square.classList.contains('carrier')) carrierC++
+    }
+    if (square.classList.contains('taken')) {
+      square.classList.add('boom')
+    } else {
+      square.classList.add('miss')
+    }
+    checkForWins()
+    currentPlayer = 'bot'
+    playfunct()
+  }
 
 
 
