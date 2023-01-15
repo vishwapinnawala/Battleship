@@ -39,5 +39,9 @@ io.on('connection',(sock)=>{
     connections[playerno]=null
     sock.broadcast.emit('connectedplayer',playerno)
 })
+sock.on('playerstate',()=>{
+    sock.broadcast.emit('enemystate',playerno)
+    connections[playerno]=true
+})
 
 }) 

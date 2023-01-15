@@ -59,6 +59,21 @@ startbtn.addEventListener('click',()=>{
   else showdetails.innerHTML="Please Drag and Drop All the Ships"
 })
 
+function multiplaygame(socket)
+{
+  if(ifGameOver)return
+  if(!status){
+    socket.emit('playerstate')
+    status=true
+    playerstatus(playernum)
+  }
+}
+
+function playerstatus(num){
+  let player = `.p${parseInt(num)+1}`
+  document.querySelector(`${player} .ready span`).classList.toggle('green')
+}
+
 function playerstatus(num){//display player connections
   let player =`.p${parseInt(num)+1}`
   document.querySelector(`${player} .connected span`).classList.toggle('green')
@@ -125,6 +140,7 @@ function playerstatus(num){//display player connections
   }
   
 
+  
   function rotate() {
     
     if (ifHorizontal) {
@@ -216,6 +232,8 @@ function playerstatus(num){//display player connections
   }
 
   function dend() {console.log('dragend') }
+
+
 
   function singleplayfunct() {
     if (ifGameOver) return
