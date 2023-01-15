@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
       submarineC = 10
     }
   
-
+  }
 
 
 })
