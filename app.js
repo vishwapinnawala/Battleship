@@ -109,6 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
   function dragon() {selectedship = this, selectedshiplegth = this.childNodes.length}
   function dragOff(e) { e.preventDefault() }
   function dragin(e) {e.preventDefault()}
+  function dragout() {}
 
   function drop() {
     let lastselectship = selectedship.lastChild.id
@@ -140,8 +141,8 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
     displayboard.removeChild(selectedship)
   }
 
-  function dragout() {}
-
   
+
+
 
 })
