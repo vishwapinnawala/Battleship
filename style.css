@@ -105,3 +105,7 @@
     display: flex;
     flex-wrap: wrap;
   }
+  .ship div {
+    width: 40px;
+    height: 40px;
+  }
