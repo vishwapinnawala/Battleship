@@ -201,6 +201,16 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
     yourturn.innerHTML = 'Your Turn'
     currentPlayer = 'player'
   }
+
+  function wincheck() {
+    if (destroyerC === 2) {
+      showdetails.innerHTML = "Bot's destroyer Destroyed"
+      destroyerC = 10
+    }
+    if (submarineC === 3) {
+      showdetails.innerHTML = "Bot's Submarine Destroyed"
+      submarineC = 10
+    }
   
 
 
