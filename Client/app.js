@@ -285,7 +285,7 @@ function playerconnectstatus(num){//display player connections
     if (ifGameOver) return
     if (currentPlayer === 'player') {
       yourturn.innerHTML = 'Play Now'
-      botblocks.forEach(square => square.addEventListener('click', function(e) {showblocks(square.classList) }))
+      botblocks.forEach(square => square.addEventListener('click', function(e) {boomfires=square.dataset.id, showblocks(square.classList) }))
     }
     if (currentPlayer === 'bot') {
       yourturn.innerHTML = "Computer's Turn"
@@ -304,7 +304,7 @@ function playerconnectstatus(num){//display player connections
   function showblocks(classList) {
     const enemyblock= botboard.querySelector(`div[data-id='${boomfires}']`)
     const obj=Object.values(classList)
-    if (!enemyblock.classList.contains('boom')&& currentPlayer== 'player' && !ifGameOver) {
+    if (!enemyblock.classList.contains('boom') && currentPlayer== 'player' && !ifGameOver) {
       if (obj.includes('destroyer')) destroyerC++
       if (obj.includes('submarine')) submarineC++
       if (obj.includes('cruiser')) cruiserC++
