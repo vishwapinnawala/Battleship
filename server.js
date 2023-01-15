@@ -10,3 +10,7 @@ const port=3000
 app.use(express.static(path.join(__dirname,"Client")))
 
 server.listen(port,()=>console.log("Server running on port "+port))
+
+io.on('connection',socket=>{
+    console.log('listenre')
+})
