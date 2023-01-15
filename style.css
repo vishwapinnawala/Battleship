@@ -90,3 +90,10 @@
     display: flex;
     flex-wrap: wrap;
   }
+  .carrierwrap{
+    width: 200px;
+    height: 40px;
+    background-color: green;
+    margin: 10px;
+    display: flex;
+  }
