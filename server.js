@@ -24,11 +24,11 @@ io.on('connection',(sock)=>{
  
 
   sock.emit('playerno',playerno);
-  console.log('Player '+playerno+' Connected')
+  //console.log('Player '+playerno+' Connected')
 
 
     sock.on('disconnect', function(){
-      console.log('User Disconnected');
+      //console.log('User Disconnected');
   })
 
   if(playerno==-1)return
