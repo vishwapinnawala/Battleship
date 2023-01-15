@@ -86,6 +86,13 @@ botblocks.forEach(blocks=>{
   })
 })
 
+socket.on('fire',id=>{
+  botturn(id)
+  const sqaureblock=userblocks[id]
+  socket.emit('fire-reply',sqaureblock.classList)
+  multiplaygame(socket)
+})
+
 function multiplaygame(socket)
 {
   if(ifGameOver)return
