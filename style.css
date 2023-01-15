@@ -112,4 +112,24 @@
   .boom {
     background-color: red;
   }
+  .destroyer {
+    background-color: orange;
+  }
+  
+  .submarine {
+    background-color: pink;
+  }
+  
+  .cruiser {
+    background-color: purple;
+  }
+  
+  .battleship {
+    background-color: aqua;
+  }
+  
+  .carrier {
+    background-color: green;
+  }
+  
   
