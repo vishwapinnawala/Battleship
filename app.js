@@ -141,6 +141,8 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
     displayboard.removeChild(selectedship)
   }
 
+  function dend() { }
+
   
 
 
