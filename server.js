@@ -12,7 +12,7 @@ app.use(express.static(path.join(__dirname,"Client")))
 server.listen(port,()=>console.log("Server running on port "+port))
 const connections=[null,null]
 io.on('connection',(sock)=>{
-   // console.log('Someone Connected');
+   //console.log('Someone Connected');
     //sock.emit('message','You Connected to Server!');
   let playerno=-1;
   for(const i in connections){
@@ -24,7 +24,7 @@ io.on('connection',(sock)=>{
  
 
   sock.emit('playerno',playerno);
-  //console.log('Player '+playerno+' Connected')
+  console.log('Player '+playerno+' Connected')
 
 
     sock.on('disconnect', function(){

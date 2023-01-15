@@ -53,9 +53,10 @@ socket.on('connectedplayer',num=>{
   console.log('Player '+num+' Connected')
   playerstatus(num)
 })
-playerstatus(num){//display player connections
+function playerstatus(num){//display player connections
   let player =`.p${parseInt(num)+1}`
   document.querySelector(`${player}.connected span`).classList.toggle('green')
+  if(parseInt(num)==playernum) document.querySelector(player).style.fontWeight='bold'
 }
   }
 
