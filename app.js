@@ -125,6 +125,23 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
     selectedShipIndex = parseInt(selectshipindex.substr(-1))
 
     lastshipid = lastshipid - selectedShipIndex
+
+    if (ifHorizontal && !newNotAllowedHorizontal.includes(lastshipid)) {
+      for (let i=0; i < selectedshiplegth; i++) {
+        userblocks[parseInt(this.dataset.id) - selectedShipIndex + i].classList.add('taken', shipsclass)
+      }
+
+    } else if (!ifHorizontal && !newNotAllowedVertical.includes(lastshipid)) {
+      for (let i=0; i < selectedshiplegth; i++) {
+        userblocks[parseInt(this.dataset.id) - selectedShipIndex + width*i].classList.add('taken', shipsclass)
+      }
+    } else return
+
+    displayboard.removeChild(selectedship)
   }
+
+  function dragout() {}
+
+  
 
 })
