@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'Playbattleship'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F2FE5EB69592482C96A49E0615FE684B }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_DE2F06A648624ACDBA3B2CA464B22876 }}
           package: .
