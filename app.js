@@ -242,23 +242,23 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
       carrierC = 10
     }
     if (botDestroyerC === 2) {
-      showdetails.innerHTML = "Bot's destroyer Destroyed"
+      showdetails.innerHTML = "Your destroyer Destroyed"
       botDestroyerC = 10
     } 
     if (botSubmarineC === 3) {
-      showdetails.innerHTML = "Bot's submarine Destroyed"
+      showdetails.innerHTML = "Your submarine Destroyed"
       botSubmarineC = 10
     }
     if (botCruiserC === 3) {
-      showdetails.innerHTML ="Bot's Cruiser Destroyed"
+      showdetails.innerHTML ="Your Cruiser Destroyed"
       botCruiserC = 10
     }
     if (botBattleshipC === 4) {
-      showdetails.innerHTML = "Bot's Battleship Destroyed"
+      showdetails.innerHTML = "Your Battleship Destroyed"
       botBattleshipC = 10
     }
     if (botCarrierC === 5) {
-      showdetails.innerHTML = "Bot's Carrier Destroyed"
+      showdetails.innerHTML = "Your Carrier Destroyed"
       botCarrierC = 10
     }
     if (
