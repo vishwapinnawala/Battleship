@@ -143,7 +143,24 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
 
   function dend() { }
 
-  
+  function playfunct() {
+    if (ifGameOver) return
+    if (currentPlayer === 'player') {
+      yourturn.innerHTML = 'Play Now'
+      botblocks.forEach(square => square.addEventListener('click', function(e) {revealSquare(square) }))
+    }
+    if (currentPlayer === 'bot') {
+      yourturn.innerHTML = "Computer's Turn"//error??????
+      setTimeout(botturn, 1000)
+    }
+  }
+  startbtn.addEventListener('click', playfunct)
+
+  let destroyerC = 0
+  let submarineC = 0
+  let cruiserC = 0
+  let battleshipC = 0
+  let carrierC = 0
 
 
 
