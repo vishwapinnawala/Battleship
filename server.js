@@ -13,8 +13,21 @@ server.listen(port,()=>console.log("Server running on port "+port))
 const connections=[null,null]
 io.on('connection',(sock)=>{
     console.log('Someone Connected');
-    //sock.emit('message','You Connected to Server!');
-  
+    sock.emit('message','You Connected to Server!');
+  let playerno=-1;
+  for(const i in connections){
+    if(connections[i]==null){
+        playerno=i
+        break
+    }
+  }
+  if(playerno==-1)return
+
+  sock.emit('playerno',playerno);
+  console.log('Player '+playerno+' Connected')
+
+
     sock.on('disconnect', function(){
       console.log('User Disconnected');
-  })}) 
+  })
+}) 

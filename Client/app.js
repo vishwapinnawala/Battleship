@@ -12,6 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
   const rotatebtn = document.querySelector('#rotatebtn')
   const yourturn = document.querySelector('#yourgo')
   const showdetails = document.querySelector('#detail')
+  let gamemod=""
+  let playernum=0
+  let status=false
+  let enemystatus=false
+  let shipsplaced=false
+  let boomfires=-1
 
   const socket=io();
 
