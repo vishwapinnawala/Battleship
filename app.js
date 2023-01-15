@@ -187,6 +187,20 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
   let botBattleshipC = 0
   let botCarrierC = 0
 
+  function botturn() {
+    let random = Math.floor(Math.random() * userblocks.length)
+    if (!userblocks[random].classList.contains('boom')) {
+      userblocks[random].classList.add('boom')
+      if (userblocks[random].classList.contains('destroyer')) botDestroyerC++
+      if (userblocks[random].classList.contains('submarine')) botSubmarineC++
+      if (userblocks[random].classList.contains('cruiser')) botCruiserC++
+      if (userblocks[random].classList.contains('battleship')) botBattleshipC++
+      if (userblocks[random].classList.contains('carrier')) botCarrierC++
+      wincheck()
+    } else botturn()
+    yourturn.innerHTML = 'Your Turn'
+    currentPlayer = 'player'
+  }
   
 
 
