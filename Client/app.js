@@ -323,18 +323,18 @@ function playerconnectstatus(num){//display player connections
   let botBattleshipC = 0
   let botCarrierC = 0
 
-  function botturn() {
-    let random = Math.floor(Math.random() * userblocks.length)
-    if (!userblocks[random].classList.contains('boom')) {
+  function botturn(block) {
+    if(gamemod=='single')block = Math.floor(Math.random() * userblocks.length)
+    if (!userblocks[block].classList.contains('boom')) {
       //console.log("Adding Player Board Boom")
-      userblocks[random].classList.add('boom')
-      if (userblocks[random].classList.contains('destroyer')) botDestroyerC++
-      if (userblocks[random].classList.contains('submarine')) botSubmarineC++
-      if (userblocks[random].classList.contains('cruiser')) botCruiserC++
-      if (userblocks[random].classList.contains('battleship')) botBattleshipC++
-      if (userblocks[random].classList.contains('carrier')) botCarrierC++
+      userblocks[block].classList.add('boom')
+      if (userblocks[block].classList.contains('destroyer')) botDestroyerC++
+      if (userblocks[block].classList.contains('submarine')) botSubmarineC++
+      if (userblocks[block].classList.contains('cruiser')) botCruiserC++
+      if (userblocks[block].classList.contains('battleship')) botBattleshipC++
+      if (userblocks[block].classList.contains('carrier')) botCarrierC++
       wincheck()
-    } else botturn()
+    } else if(gamemod=='single') botturn()
     yourturn.innerHTML = 'Your Turn'
     currentPlayer = 'player'
   }
