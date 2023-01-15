@@ -191,6 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
       if (square.classList.contains('carrier')) carrierC++
     }
     if (square.classList.contains('taken')) {
+      console.log("Adding Boom")
       square.classList.add('boom')
     } else {
       square.classList.add('miss')
@@ -209,7 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
   function botturn() {
     let random = Math.floor(Math.random() * userblocks.length)
     if (!userblocks[random].classList.contains('boom')) {
-      console.log("Adding Boom")
+      
       userblocks[random].classList.add('boom')
       if (userblocks[random].classList.contains('destroyer')) botDestroyerC++
       if (userblocks[random].classList.contains('submarine')) botSubmarineC++
