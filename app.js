@@ -96,9 +96,9 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
   userblocks.forEach(square => square.addEventListener('dragstart', dragon))
   userblocks.forEach(square => square.addEventListener('dragover', dragOff))
   userblocks.forEach(square => square.addEventListener('dragenter', dragin))
-  //userblocks.forEach(square => square.addEventListener('dragleave', dragout))
+  userblocks.forEach(square => square.addEventListener('dragleave', dragout))
   userblocks.forEach(square => square.addEventListener('drop', drop))
-  //userblocks.forEach(square => square.addEventListener('dragend', dend))
+  userblocks.forEach(square => square.addEventListener('dragend', dend))
 
   let selectshipindex
   let selectedship
