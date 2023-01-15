@@ -11,3 +11,7 @@
     background-color: blue;
     margin: 20px;
   }
+
+  .container {
+    display: flex;
+  }
