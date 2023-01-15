@@ -52,5 +52,7 @@ sock.on('checkplayers',()=>{
     }
     sock.emit('checkplayers',players)
 })
-
+sock.on('fire',id=>{
+    sock.broadcast.emit('fire',id)
+})
 }) 
