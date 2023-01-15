@@ -55,4 +55,7 @@ sock.on('checkplayers',()=>{
 sock.on('fire',id=>{
     sock.broadcast.emit('fire',id)
 })
+sock.on('firereply',square=>{
+    sock.broadcast.emit('firereply',square)
+})
 }) 
