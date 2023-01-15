@@ -64,10 +64,10 @@ socket.on('enemystate',num=>{
 
 socket.on('checkplayers',players=>{
   players.forEach((p,i)=>{
-    if(p.connected)playerconnectstatus(i)
+    if(p.connected) playerconnectstatus(i)
     if(p.status){
       playerstatus(i)
-      if(i != playernum)
+      if(i != playernum) enemystatus=true
     }
   })
 })
