@@ -54,6 +54,11 @@ socket.on('connectedplayer',num=>{
   playerstatus(num)
 })
 
+startbtn.addEventListener('click',()=>{
+  if(shipsplaced)multiplaygame(socket)
+  else showdetails.innerHTML="Please Drag and Drop All the Ships"
+})
+
 function playerstatus(num){//display player connections
   let player =`.p${parseInt(num)+1}`
   document.querySelector(`${player} .connected span`).classList.toggle('green')
@@ -207,6 +212,7 @@ function playerstatus(num){//display player connections
     } else return
 
     displayboard.removeChild(selectedship)
+    if(!displayboard.querySelector('.ship')) shipsplaced=true
   }
 
   function dend() {console.log('dragend') }
