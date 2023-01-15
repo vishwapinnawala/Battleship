@@ -227,6 +227,10 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
       showdetails.innerHTML = "Bot's destroyer Destroyed"
       botDestroyerC = 10
     } 
+    if (botSubmarineC === 3) {
+      showdetails.innerHTML = "Bot's ubmarine Destroyed"
+      botSubmarineC = 10
+    }
   
   }
 
