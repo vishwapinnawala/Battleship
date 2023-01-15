@@ -11,6 +11,10 @@ app.use(express.static(path.join(__dirname,"Client")))
 
 server.listen(port,()=>console.log("Server running on port "+port))
 
-io.on('connection',socket=>{
-    console.log('listenre')
-})
+io.on('connection',(sock)=>{
+    console.log('Someone Connected');
+    //sock.emit('message','You Connected to Server!');
+  
+    sock.on('disconnect', function(){
+      console.log('User Disconnected');
+  })})
