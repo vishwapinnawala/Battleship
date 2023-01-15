@@ -176,12 +176,16 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
     } else {
       square.classList.add('miss')
     }
-    checkForWins()
+    wincheck()
     currentPlayer = 'bot'
     playfunct()
   }
 
-
+  let botDestroyerC = 0
+  let botSubmarineC = 0
+  let botCruiserC = 0
+  let botBattleshipC = 0
+  let botCarrierC = 0
 
   
 
