@@ -10,7 +10,7 @@ const port=3000
 app.use(express.static(path.join(__dirname,"Client")))
 
 server.listen(port,()=>console.log("Server running on port "+port))
-
+const connections=[null,null]
 io.on('connection',(sock)=>{
     console.log('Someone Connected');
     //sock.emit('message','You Connected to Server!');

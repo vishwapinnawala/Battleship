@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
   const yourturn = document.querySelector('#yourgo')
   const showdetails = document.querySelector('#detail')
 
+  const socket=io();
+
   const userblocks = []
   const botblocks = []
   let ifHorizontal = true
