@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
   const userboard = document.querySelector('.usergrid')
   const botboard = document.querySelector('.computergrid')
   const displayboard = document.querySelector('.shipselector')
-  const ships = document.querySelectorAll('.ships')
+  const ships = document.querySelectorAll('.ship')
   const destroyer = document.querySelector('.destroyerwrap')
   const submarine = document.querySelector('.submarinewrap')
   const cruiser = document.querySelector('.cruiserwrap')
@@ -73,21 +73,23 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
 
   function rotate() {
     if (ifHorizontal) {
-      destroyer.classList.toggle('destroyer_verticle')//Css
-      submarine.classList.toggle('submarine_verticle')
-      cruiser.classList.toggle('cruiser_verticle')
-      battleship.classList.toggle('battleship_verticle')
-      carrier.classList.toggle('carrier_verticle')
-      ifHorizontal = false      
+      destroyer.classList.toggle('destroyer-verticle')//Css
+      submarine.classList.toggle('submarine-verticle')
+      cruiser.classList.toggle('cruiser-verticle')
+      battleship.classList.toggle('battleship-verticle')
+      carrier.classList.toggle('carrier-verticle')
+      ifHorizontal = false   
+      console.log(ifHorizontal)   
       return
     }
     if (!ifHorizontal) {
-      destroyer.classList.toggle('destroyer_verticle')
-      submarine.classList.toggle('submarine_verticle')
-      cruiser.classList.toggle('cruiser_verticle')
-      battleship.classList.toggle('battleship_verticle')
-      carrier.classList.toggle('carrier_verticle')
+      destroyer.classList.toggle('destroyer-verticle')
+      submarine.classList.toggle('submarine-verticle')
+      cruiser.classList.toggle('cruiser-verticle')
+      battleship.classList.toggle('battleship-verticle')
+      carrier.classList.toggle('carrier-verticle')
       ifHorizontal = true
+      console.log(ifHorizontal)
       return
     }
   }
@@ -98,28 +100,39 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
   userblocks.forEach(square => square.addEventListener('dragover', dragOff))
   userblocks.forEach(square => square.addEventListener('dragenter', dragin))
   userblocks.forEach(square => square.addEventListener('dragleave', dragout))
-  userblocks.forEach(square => square.addEventListener('drop', drop))
+  userblocks.forEach(square => square.addEventListener('drop', Ddrop))
   userblocks.forEach(square => square.addEventListener('dragend', dend))
 
   let selectshipindex
   let selectedship
   let selectedshiplegth
-  
 
-  ships.forEach(ship => ship.addEventListener('mousedown', (e) => {selectshipindex = e.target.id}))
+  ships.forEach(ship => ship.addEventListener('mousedown', (e) => {
+    selectshipindex = e.target.id
+    console.log(selectshipindex)}
+    ))
 
   function dragon() {
     selectedship = this
     selectedshiplegth = this.childNodes.length
   }
-  function dragOff(e) { e.preventDefault() }
-  function dragin(e) {e.preventDefault()}
-  function dragout() {}
+  
+  function dragOff(e) {
+    e.preventDefault()
+  }
+  function dragin(e) {
+    e.preventDefault()
+  }
+  function dragout() {
+    console.log('drag leave')
+  }
 
-  function drop() {
-    let lastselectship = selectedship.lastChild.id
-    let shipsclass = lastselectship.slice(0, -2)
-    let lastship = parseInt(lastselectship.substr(-1))
+  function Ddrop() {
+    let selectshiplastid = selectedship.lastChild.id
+    console.log(selectedship)
+    console.log(selectedship)
+    let shipsclass = selectshiplastid.slice(0,-2)
+    let lastship = parseInt(selectshiplastid.substr(-1))
     let lastshipid = lastship + parseInt(this.dataset.id)
   
     const notAllowedHorizontal = [0,10,20,30,40,50,60,70,80,90,1,11,21,31,41,51,61,71,81,91,2,22,32,42,52,62,72,82,92,3,13,23,33,43,53,63,73,83,93]
@@ -146,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
     displayboard.removeChild(selectedship)
   }
 
-  function dend() { }
+  function dend() {console.log('dragend') }
 
   function playfunct() {
     if (ifGameOver) return
