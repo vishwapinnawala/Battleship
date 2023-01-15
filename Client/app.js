@@ -1,3 +1,5 @@
+const { Console } = require("console")
+
 document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Variables
   const userboard = document.querySelector('.usergrid')
   const botboard = document.querySelector('.computergrid')
@@ -27,6 +29,17 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
   let ifGameOver = false
   let currentPlayer = 'player'
   let width=10
+
+  socket.on('playerno',num=>{
+    if(num==-1){
+      detail.innerHTML="Sorry! We are Full!!!"
+    }
+    else{
+      playernum=parseInt(num)
+      if(playernum==1) currentPlayer="Enemy"
+      Console.log('Enemy is '+playernum)
+    }
+  })
 
   function generateboard(grid, blocks) {//Generating the game grid
     for (let i = 0; i < width*width; i++) {

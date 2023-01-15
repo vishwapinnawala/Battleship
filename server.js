@@ -21,7 +21,7 @@ io.on('connection',(sock)=>{
         break
     }
   }
-  if(playerno==-1)return
+ 
 
   sock.emit('playerno',playerno);
   console.log('Player '+playerno+' Connected')
@@ -30,4 +30,6 @@ io.on('connection',(sock)=>{
     sock.on('disconnect', function(){
       console.log('User Disconnected');
   })
+
+  if(playerno==-1)return
 }) 
