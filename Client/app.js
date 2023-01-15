@@ -47,6 +47,8 @@ multibtn.addEventListener('click',beginmultiplayer)
         playernum=parseInt(num)
         if(playernum==1) currentPlayer="Enemy"
         console.log('Enemy is '+playernum)
+
+        socket.emit('checkplayers')
       }
     })
 socket.on('connectedplayer',num=>{
@@ -72,6 +74,15 @@ function multiplaygame(socket)
     socket.emit('playerstate')
     status=true
     playerstatus(playernum)
+  }
+  if(enemystatus){
+    if(currentPlayer=='player')
+    {
+      yourturn.innerHTML='Your Turn'
+    }
+    if(currentPlayer=='Enemy'){
+      yourturn.innerHTML='Enemy Turn'
+    }
   }
 }
 
