@@ -49,7 +49,9 @@ multibtn.addEventListener('click',beginmultiplayer)
         console.log('Enemy is '+playernum)
       }
     })
-
+socket.on('connectedplayer',num=>{
+  console.log('Player '+num+' Connected')
+})
   }
 
   function beginsingleplayer(){

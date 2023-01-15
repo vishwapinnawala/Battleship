@@ -32,4 +32,7 @@ io.on('connection',(sock)=>{
   })
 
   if(playerno==-1)return
+
+  connections[playerno]=false
+  sock.broadcast.emit('connectedplayer',playerno)
 }) 
