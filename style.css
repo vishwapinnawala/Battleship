@@ -1,7 +1,7 @@
-.grid div {
-    width: 40px;
-    height: 40px;
+.container {
+    display: flex;
   }
+
 
   .usergrid {
     width: 400px;
@@ -12,8 +12,9 @@
     margin: 20px;
   }
 
-  .container {
-    display: flex;
+  .grid div {
+    width: 40px;
+    height: 40px;
   }
 
   .computergrid {
@@ -52,7 +53,7 @@
     margin: 10px;
     display: flex;
   }
-  .submarine-vertical {
+  .submarine-verticle{
     width: 40px;
     height: 120px;
     background-color: pink;
@@ -114,6 +115,7 @@
   .miss {
     background-color: black;
  }
+ 
   .destroyer {
     background-color: orange;
   }
@@ -126,9 +128,7 @@
     background-color: purple;
   }
 
-  .boom {
-    background-color: red;
-  }
+  
   
   .battleship {
     background-color: aqua;
@@ -136,6 +136,9 @@
   
   .carrier {
     background-color: green;
+  }
+  .boom {
+    background-color: red;
   }
 
   
