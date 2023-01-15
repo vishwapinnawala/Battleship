@@ -45,3 +45,10 @@
     display: flex;
     flex-wrap: wrap;
   }
+  .submarinewrap {
+    width: 120px;
+    height: 40px;
+    background-color: pink;
+    margin: 10px;
+    display: flex;
+  }
