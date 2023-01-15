@@ -51,7 +51,7 @@ multibtn.addEventListener('click',beginmultiplayer)
     })
 socket.on('connectedplayer',num=>{
   console.log('Player '+num+' Connected or disconnected')
-  playerstatus(num)
+  playerconnectstatus(num)
 })
 
 socket.on('enemystate',num=>{
@@ -80,7 +80,7 @@ function playerstatus(num){
   document.querySelector(`${player} .ready span`).classList.toggle('green')
 }
 
-function playerstatus(num){//display player connections
+function playerconnectstatus(num){//display player connections
   let player =`.p${parseInt(num)+1}`
   document.querySelector(`${player} .connected span`).classList.toggle('green')
   if(parseInt(num)==playernum) document.querySelector(player).style.fontWeight='bold'
