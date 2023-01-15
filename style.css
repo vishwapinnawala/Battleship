@@ -24,3 +24,10 @@
     background-color: lightgreen;
     margin: 20px;
   }
+  .shipselector {
+    width: 400px;
+    height: 400px;
+    margin: 20px;
+    background-color: yellow;
+  }
+  
