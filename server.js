@@ -27,12 +27,17 @@ io.on('connection',(sock)=>{
   console.log('Player '+playerno+' Connected')
 
 
-    sock.on('disconnect', function(){
-      //console.log('User Disconnected');
-  })
+   
 
   if(playerno==-1)return
 
   connections[playerno]=false
   sock.broadcast.emit('connectedplayer',playerno)
+
+  sock.on('disconnect', function(){
+    console.log('Player '+playerno+" Disconnected");
+    connections[playerno]=null
+    socket.broadcast.emit('connectedplayer',playerno)
+})
+
 }) 
