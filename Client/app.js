@@ -89,10 +89,13 @@ botblocks.forEach(blocks=>{
 socket.on('fire',id=>{
   botturn(id)
   const sqaureblock=userblocks[id]
-  socket.emit('fire-reply',sqaureblock.classList)
+  socket.emit('firereply',sqaureblock.classList)
   multiplaygame(socket)
 })
-
+socket.on('firereply',classList=>{
+  showblocks(classList)
+  multiplaygame(socket)
+})
 function multiplaygame(socket)
 {
   if(ifGameOver)return
@@ -282,7 +285,7 @@ function playerconnectstatus(num){//display player connections
     if (ifGameOver) return
     if (currentPlayer === 'player') {
       yourturn.innerHTML = 'Play Now'
-      botblocks.forEach(square => square.addEventListener('click', function(e) {showblocks(square) }))
+      botblocks.forEach(square => square.addEventListener('click', function(e) {showblocks(square.classList) }))
     }
     if (currentPlayer === 'bot') {
       yourturn.innerHTML = "Computer's Turn"
@@ -298,7 +301,9 @@ function playerconnectstatus(num){//display player connections
   let carrierC = 0
 
   
-  function showblocks(square) {
+  function showblocks(classList) {
+    const enemyblock= botboard.querySelector(`div[data-id='${boomfires}']`)
+    const obj=Object.values(classList)
     if (!square.classList.contains('boom')) {
       if (square.classList.contains('destroyer')) destroyerC++
       if (square.classList.contains('submarine')) submarineC++
