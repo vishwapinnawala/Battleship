@@ -123,6 +123,10 @@
   .cruiser {
     background-color: purple;
   }
+
+  .miss {
+    background-color: black;
+ }
   
   .battleship {
     background-color: aqua;
@@ -131,5 +135,5 @@
   .carrier {
     background-color: green;
   }
-  
+
   
