@@ -304,22 +304,22 @@ function playerconnectstatus(num){//display player connections
   function showblocks(classList) {
     const enemyblock= botboard.querySelector(`div[data-id='${boomfires}']`)
     const obj=Object.values(classList)
-    if (!square.classList.contains('boom')) {
-      if (square.classList.contains('destroyer')) destroyerC++
-      if (square.classList.contains('submarine')) submarineC++
-      if (square.classList.contains('cruiser')) cruiserC++
-      if (square.classList.contains('battleship')) battleshipC++
-      if (square.classList.contains('carrier')) carrierC++
+    if (!enemyblock.classList.contains('boom')&& currentPlayer== 'player' && !ifGameOver) {
+      if (obj.contains('destroyer')) destroyerC++
+      if (obj.contains('submarine')) submarineC++
+      if (obj.contains('cruiser')) cruiserC++
+      if (obj.contains('battleship')) battleshipC++
+      if (obj.contains('carrier')) carrierC++
     }
-    if (square.classList.contains('taken')) {
-      square.classList.add('boom')
+    if (obj.contains('taken')) {
+      enemyblock.classList.add('boom')
       console.log("Adding Bot Board Boom")
     } else {
-      square.classList.add('miss')
+      enemyblock.classList.add('miss')
     }
     wincheck()
     currentPlayer = 'bot'
-    singleplayfunct()
+    if(gamemod=='single')singleplayfunct()
   }
 
   let botDestroyerC = 0
