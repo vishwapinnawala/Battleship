@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
   const carrier = document.querySelector('.carrierwrap')
   const startbtn = document.querySelector('#startbtn')
   const rotatebtn = document.querySelector('#rotatebtn')
+  const multibtn = document.querySelector('#singleplayerbtn')
+  const singlebtn = document.querySelector('#multiplayerbtn')
   const yourturn = document.querySelector('#yourgo')
   const showdetails = document.querySelector('#detail')
   let gamemod=""
@@ -20,8 +22,19 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
   let enemystatus=false
   let shipsplaced=false
   let boomfires=-1
-
   const socket=io();
+
+singlebtn.addEventListener('click',beginsingleplayer)
+multibtn.addEventListener('click',beginmultiplayer)
+  
+function beginsingleplayer(){
+  gamemod="single"
+
+  for (let i = 0; i < 5; i++) {
+    generate(shipsarray[i])
+  }
+  startbtn.addEventListener('click', singleplayfunct)
+}
 
   const userblocks = []
   const botblocks = []
@@ -32,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
 
   socket.on('playerno',num=>{
     if(num==-1){
-      detail.innerHTML="Sorry! We are Full!!!"
+      showdetails.innerHTML="Sorry! We are Full!!!"
     }
     else{
       playernum=parseInt(num)
@@ -88,9 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
 
     else generate(ship)
   }
-  for (let i = 0; i < 5; i++) {
-    generate(shipsarray[i])
-  }
+  
 
   function rotate() {
     
@@ -183,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
 
   function dend() {console.log('dragend') }
 
-  function playfunct() {
+  function singleplayfunct() {
     if (ifGameOver) return
     if (currentPlayer === 'player') {
       yourturn.innerHTML = 'Play Now'
@@ -194,7 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
       setTimeout(botturn, 1000)
     }
   }
-  startbtn.addEventListener('click', playfunct)
+  
 
   let destroyerC = 0
   let submarineC = 0
@@ -219,7 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
     }
     wincheck()
     currentPlayer = 'bot'
-    playfunct()
+    singleplayfunct()
   }
 
   let botDestroyerC = 0
@@ -302,7 +313,7 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
 
   function finish() {
     ifGameOver = true
-    startbtn.removeEventListener('click', playfunct)
+    startbtn.removeEventListener('click', singleplayfunct)
   }
 
 
