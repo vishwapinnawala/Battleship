@@ -37,7 +37,7 @@
     margin: 10px;
     display: flex;
   }
-  .destroyervertical {
+  .destroyer-vertical {
     width: 40px;
     height: 80px;
     background-color: orange;
@@ -52,7 +52,7 @@
     margin: 10px;
     display: flex;
   }
-  .submarinevertical {
+  .submarine-vertical {
     width: 40px;
     height: 120px;
     background-color: pink;
@@ -67,7 +67,7 @@
     margin: 10px;
     display: flex;
   }
-  .cruiservertical {
+  .cruiser-vertical {
     width: 40px;
     height: 120px;
     background-color: purple;
@@ -83,7 +83,7 @@
     display: flex;
   }
 
-  .battleshipvertical {
+  .battleship-vertical {
     width: 40px;
     height: 160px;
     background-color: aqua;
@@ -98,7 +98,7 @@
     margin: 10px;
     display: flex;
   }
-  .carriervertical {
+  .carrier-vertical {
     width: 40px;
     height: 200px;
     background-color: green;
