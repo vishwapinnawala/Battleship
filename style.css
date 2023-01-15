@@ -113,6 +113,9 @@
   .boom {
     background-color: red;
   }
+  .miss {
+    background-color: black;
+ }
   .destroyer {
     background-color: orange;
   }
@@ -125,9 +128,7 @@
     background-color: purple;
   }
 
-  .miss {
-    background-color: black;
- }
+  
   
   .battleship {
     background-color: aqua;

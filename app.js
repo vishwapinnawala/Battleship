@@ -72,6 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
   }
 
   function rotate() {
+    
     if (ifHorizontal) {
       destroyer.classList.toggle('destroyer-verticle')//Css
       submarine.classList.toggle('submarine-verticle')
@@ -168,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
       botblocks.forEach(square => square.addEventListener('click', function(e) {showblocks(square) }))
     }
     if (currentPlayer === 'bot') {
-      yourturn.innerHTML = "Computer's Turn"//error??????
+      yourturn.innerHTML = "Computer's Turn"
       setTimeout(botturn, 1000)
     }
   }
