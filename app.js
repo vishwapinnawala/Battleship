@@ -258,5 +258,10 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
   
   }
 
+  function finish() {
+    ifGameOver = true
+    startbtn.removeEventListener('click', playfunct)
+  }
+
 
 })
