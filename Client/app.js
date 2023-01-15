@@ -77,6 +77,15 @@ startbtn.addEventListener('click',()=>{
   else showdetails.innerHTML="Please Drag and Drop All the Ships"
 })
 
+botblocks.forEach(blocks=>{
+  blocks.addEventListener('click',()=>{
+    if(currentPlayer=='player' && status && enemystatus){
+      boomfires=blocks.dataset.id
+      socket.emit('fire',boomfires)
+    }
+  })
+})
+
 function multiplaygame(socket)
 {
   if(ifGameOver)return
