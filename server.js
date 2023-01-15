@@ -12,8 +12,8 @@ app.use(express.static(path.join(__dirname,"Client")))
 server.listen(port,()=>console.log("Server running on port "+port))
 const connections=[null,null]
 io.on('connection',(sock)=>{
-    console.log('Someone Connected');
-    sock.emit('message','You Connected to Server!');
+   // console.log('Someone Connected');
+    //sock.emit('message','You Connected to Server!');
   let playerno=-1;
   for(const i in connections){
     if(connections[i]==null){
