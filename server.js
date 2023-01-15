@@ -58,5 +58,11 @@ sock.on('fire',id=>{
 })
 sock.on('firereply',square=>{
     sock.broadcast.emit('firereply',square)
+    
 })
+setTimeout(() => {
+    connections[playerno]==null
+    sock.timeout
+}, 600000);
+
 }) 
