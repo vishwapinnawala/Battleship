@@ -37,7 +37,7 @@ io.on('connection',(sock)=>{
   sock.on('disconnect', function(){
     console.log('Player '+playerno+" Disconnected");
     connections[playerno]=null
-    socket.broadcast.emit('connectedplayer',playerno)
+    sock.broadcast.emit('connectedplayer',playerno)
 })
 
 }) 
