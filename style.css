@@ -110,9 +110,7 @@
     width: 40px;
     height: 40px;
   }
-  .boom {
-    background-color: red;
-  }
+ 
   .miss {
     background-color: black;
  }
@@ -128,7 +126,9 @@
     background-color: purple;
   }
 
-  
+  .boom {
+    background-color: red;
+  }
   
   .battleship {
     background-color: aqua;
