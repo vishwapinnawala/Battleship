@@ -62,6 +62,16 @@ socket.on('enemystate',num=>{
   if(status)multiplaygame(socket)
 })
 
+socket.on('checkplayers',players=>{
+  players.forEach((p,i)=>{
+    if(p.connected)playerconnectstatus(i)
+    if(p.status){
+      playerstatus(i)
+      if(i != playernum)
+    }
+  })
+})
+
 startbtn.addEventListener('click',()=>{
   if(shipsplaced)multiplaygame(socket)
   else showdetails.innerHTML="Please Drag and Drop All the Ships"
