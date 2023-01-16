@@ -54,7 +54,7 @@ sock.on('checkplayers',()=>{
 })
 sock.on('fire',id=>{
     sock.broadcast.emit('fire',id)
-    console.log(`Fired by ${playerno}` +'to Block', id)
+    console.log(`Fired by ${playerno}` +'to Block', id)//
 })
 sock.on('firereply',square=>{
     sock.broadcast.emit('firereply',square)
