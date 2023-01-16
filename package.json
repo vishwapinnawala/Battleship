@@ -6,7 +6,7 @@
   "scripts": {
     
     "start": "node server",
-    "test":"nodemon server"
+    "testt":"nodemon server"
 
   },
   "repository": {
