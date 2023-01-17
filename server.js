@@ -19,6 +19,12 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
   //}
   //const result = haiku.insertOne(doc);
 
+mongo.connect(uri,function(err, db)){
+    if(err){
+        throw err;
+    }
+};
+
 app.use(express.static(path.join(__dirname,"Client")))
 
 server.listen(port,()=>console.log("Server running on port "+port))
