@@ -1,4 +1,5 @@
-
+var element = document.getElementById("hideelement");
+element.classList.toggle("");
 
 document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Variables
   const userboard = document.querySelector('.usergrid')
