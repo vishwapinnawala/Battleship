@@ -1,12 +1,16 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Node.js app to Azure Web App - testbattleship
+name: Build and deploy Node.js app to Azure Web App - Playbattleship
 
 on:
   push:
     branches:
       - master
+      
+    paths-ignore:
+      - Angularloader
+  
   workflow_dispatch:
 
 jobs:
@@ -26,7 +30,6 @@ jobs:
           npm install
           npm run build --if-present
           npm run test --if-present
-          npm run dev --if-present
       
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
@@ -51,7 +54,7 @@ jobs:
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
         with:
-          app-name: 'testbattleship'
+          app-name: 'Playbattleship'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_293F62EF503C47E09A980E49FE1C3D5E }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3C114E2E86424CB5863B959ABBDEAD12 }}
           package: .
