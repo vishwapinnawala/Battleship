@@ -1,5 +1,5 @@
-var element = document.getElementById("hideelement");
-element.classList.toggle("showhide");
+//var element = document.getElementById("hideelement");
+//element.classList.toggle("showhide");
 
 document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Variables
   const userboard = document.querySelector('.usergrid')

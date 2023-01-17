@@ -8,7 +8,7 @@ const io=socketio(server)
 const port = process.env.PORT || 3000 
 const { MongoClient, ServerApiVersion } = require('mongodb');
 
-const uri = "mongodb+srv://<username>:<password>@cluster0.3qufw4p.mongodb.net/?retryWrites=true&w=majority";
+const uri = "mongodb+srv://vishwapinnawala:9ieB5p6ohbsEZqT8@cluster0.3qufw4p.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 client.connect(err => {
   const collection = client.db("test").collection("devices");
