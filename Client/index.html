@@ -6,12 +6,14 @@
     <script src="/socket.io/socket.io.js"> </script>
     <app-root></app-root>
     <script src="runtime.5824b6ba42695114.js" type="module"></script><script src="polyfills.25a4ac32a2ef27fa.js" type="module"></script><script src="main.7ef24612bc860e62.js" type="module"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     
   </head>
-  <body loading="lazy">
+  <body >
 
     
-   <div class="hideshow">
+   <div loading="lazy" class="" id="hideelement">
+    <script>$(hideelement).hide();setTimeout(function() { $(hideelement).show(); }, 2000);</script>
 <button id="singleplayerbtn">Single Player</button>
 <button id="multiplayerbtn">MultiPlayer</button>
 <div class="player p1">

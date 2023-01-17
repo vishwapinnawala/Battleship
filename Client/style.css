@@ -1,8 +1,8 @@
 .container {
     display: flex;
   }
-.hideshow{display: none;}
-.showhide{display: contents;}
+.hideshow{visibility: hidden;}
+.showhide{visibility:visible;}
 
   .usergrid {
     width: 400px;
