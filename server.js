@@ -10,13 +10,13 @@ const { MongoClient, ServerApiVersion } = require('mongodb');
 
 const uri = "mongodb+srv://vishwapinnawala:9ieB5p6ohbsEZqT8@cluster0.3qufw4p.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-
-client.connect();
-client.db("Battleship").command({ ping: 1 });
-console.log("Connected successfully to server");
-client.close();
-
-
+const database = client.db("Battleship");
+const haiku = database.collection("Chat");
+const doc = {
+    title: "Record of a Shriveled Datum",
+    content: "No bytes, no problem. Just insert a document, in MongoDB",
+  }
+  const result = haiku.insertOne(doc);
 
 app.use(express.static(path.join(__dirname,"Client")))
 
