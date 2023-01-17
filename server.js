@@ -6,17 +6,18 @@ const app=express()
 const server=http.createServer(app)
 const io=socketio(server)
 const port = process.env.PORT || 3000 
-const { MongoClient, ServerApiVersion } = require('mongodb');
-
-const uri = "mongodb+srv://vishwapinnawala:9ieB5p6ohbsEZqT8@cluster0.3qufw4p.mongodb.net/?retryWrites=true&w=majority";
+//const { MongoClient, ServerApiVersion } = require('mongodb');
+const mongo=require('mongodb').MongoClient;
+const uri = "mongodb+srv://vishwapinnawala:9ieB5p6ohbsEZqT8@cluster0.3qufw4p.mongodb.net/Battleship?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-const database = client.db("Battleship");
-const haiku = database.collection("Chat");
-const doc = {
-    title: "Record of a Shriveled Datum",
-    content: "No bytes, no problem. Just insert a document, in MongoDB",
-  }
-  const result = haiku.insertOne(doc);
+
+//const database = client.db("Battleship");
+//const haiku = database.collection("Chat");
+//const doc = {
+  //  title: "Record of a Shriveled Datum",
+   // content: "No bytes, no problem. Just insert a document, in MongoDB",
+  //}
+  //const result = haiku.insertOne(doc);
 
 app.use(express.static(path.join(__dirname,"Client")))
 
