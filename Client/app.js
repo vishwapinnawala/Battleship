@@ -35,30 +35,39 @@ multibtn.addEventListener('click',beginmultiplayer)
   let width=10
 
   
+  function msglist(message){
+    //var div=document.createElement('div')
+    //div.innerHTML="<div id='msgbox' class='card card-text d-inline-block p-2 px-3 m-1'></div>"
+    //message
+    
+   //msgwrap.appendChild(div)
+    //const msgbox=document.getElementById('msgwrap')
+    //var div=document.createElement('div')
+   // div.innerHTML="<div id='mssgbox' class='card card-text d-inline-block p-2 px-3 m-1'></div>"
+   // msgbox.append(div)
+   // const mssgbox=document.getElementById('mssgbox')
+   // mssgbox.innerText=message;
+    //return message
+  const msgelement = document.createElement('div')
+  msgelement.innerText = message
+  messageContainer.append(msgelement)
+  }
 
 
 
   function beginmultiplayer(){
     gamemode="multi"
     const socket=io();
+    const msgform=document.getElementById('sendwrapper')
+    const messagedata=document.getElementById('msginput')
+    const msgwrap=document.getElementById('msgwrapper')
     
-    function msglist(message){
-      //var div=document.createElement('div')
-      //div.innerHTML="<div id='msgbox' class='card card-text d-inline-block p-2 px-3 m-1'></div>"
-      //message
-      
-     //msgwrap.appendChild(div)
-      //const msgbox=document.getElementById('msgwrap')
-      //var div=document.createElement('div')
-     // div.innerHTML="<div id='mssgbox' class='card card-text d-inline-block p-2 px-3 m-1'></div>"
-     // msgbox.append(div)
-     // const mssgbox=document.getElementById('mssgbox')
-     // mssgbox.innerText=message;
-      //return message
-    const msgelement = document.createElement('div')
-    msgelement.innerText = message
-    messageContainer.append(msgelement)
-    }
+    socket.on('chatmsg',msg=>{
+      console.log(msg);
+      msglist(msg)
+    })
+    const messageContainer = document.getElementById('messagewrap')
+   
 
 
     msgform.addEventListener('submit',e=>{
