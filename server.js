@@ -27,6 +27,10 @@ const connections=[null,null]
 io.on('connection',(sock)=>{
 
     sock.emit('chatmsg','Hellloooo');
+
+    sock.on('sendmsg',message=>{
+        console.log(message)
+    })
    //console.log('Someone Connected');
     //sock.emit('message','You Connected to Server!');
   let playerno=-1;
