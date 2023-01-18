@@ -21,6 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
    const msgform=document.getElementById('sendwrapper')
    const messagedata=document.getElementById('msginput')
    const msgwrap=document.getElementById('msgwrapper')
+   var starttime=""
+   var timer=""
   let gamemod=""
   let playernum=0
   let status=false
@@ -115,7 +117,12 @@ socket.on('checkplayers',players=>{
 })
 
 startbtn.addEventListener('click',()=>{
-  if(shipsplaced)multiplaygame(socket)
+  if(shipsplaced){
+    multiplaygame(socket)
+  starttime=Date.now()
+   
+    
+  }
   else showdetails.innerHTML="Please Drag and Drop All the Ships"
 })
 
@@ -388,23 +395,23 @@ function playerconnectstatus(num){//display player connections
 
   function wincheck() {
     if (destroyerC === 2) {
-      showdetails.innerHTML = "Bot's destroyer Destroyed"
+      showdetails.innerHTML = "Enemy's destroyer Destroyed"
       destroyerC = 10
     }
     if (submarineC === 3) {
-      showdetails.innerHTML = "Bot's Submarine Destroyed"
+      showdetails.innerHTML = "Enemy's Submarine Destroyed"
       submarineC = 10
     }
     if (cruiserC === 3) {
-      showdetails.innerHTML = "Bot's Cruiser Destroyed"
+      showdetails.innerHTML = "Enemy's Cruiser Destroyed"
       cruiserC = 10
     }
     if (battleshipC === 4) {
-      showdetails.innerHTML = "Bot's Batlleship Destroyed"
+      showdetails.innerHTML = "Enemy's Batlleship Destroyed"
       battleshipC = 10
     }
     if (carrierC === 5) {
-      showdetails.innerHTML = "Bot's Carrier Destroyed"
+      showdetails.innerHTML = "Enemy's Carrier Destroyed"
       carrierC = 10
     }
     if (botDestroyerC === 2) {
@@ -431,12 +438,14 @@ function playerconnectstatus(num){//display player connections
       (destroyerC + submarineC + cruiserC + battleshipC + carrierC) === 50) 
     {
       showdetails.innerHTML = "You Won :)"
+      timer = (Date.now() - starttime)/1000
+      console.log(timer)
       finish()
     }
     if (
       (botDestroyerC + botSubmarineC + botCruiserC + botBattleshipC + botCarrierC) === 50) 
     {
-      showdetails.innerHTML = "Bot Won :("
+      showdetails.innerHTML = "Enemy Won :("
       finish()
     }
   
