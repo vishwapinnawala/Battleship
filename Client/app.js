@@ -41,15 +41,7 @@ multibtn.addEventListener('click',beginmultiplayer)
   function beginmultiplayer(){
     gamemode="multi"
     const socket=io();
-    const msgform=document.getElementById('sendwrapper')
-    const messagedata=document.getElementById('msginput')
-    const msgwrap=document.getElementById('msgwrapper')
     
-    socket.on('chatmsg',msg=>{
-      console.log(msg);
-      msglist(msg)
-    })
-    const messageContainer = document.getElementById('messagewrap')
     function msglist(message){
       //var div=document.createElement('div')
       //div.innerHTML="<div id='msgbox' class='card card-text d-inline-block p-2 px-3 m-1'></div>"
