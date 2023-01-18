@@ -44,10 +44,30 @@ multibtn.addEventListener('click',beginmultiplayer)
     const msgform=document.getElementById('sendwrapper')
     const messagedata=document.getElementById('msginput')
     const msgwrap=document.getElementById('msgwrapper')
+    const msgwraphome=document.getElementById('msgwrapper-home')
     socket.on('chatmsg',msg=>{
       console.log(msg);
       msglist(msg)
     })
+    const messageContainer = document.getElementById('messagewrap')
+    function msglist(message){
+      //var div=document.createElement('div')
+      //div.innerHTML="<div id='msgbox' class='card card-text d-inline-block p-2 px-3 m-1'></div>"
+      //message
+      
+     //msgwrap.appendChild(div)
+      //const msgbox=document.getElementById('msgwrap')
+      //var div=document.createElement('div')
+     // div.innerHTML="<div id='mssgbox' class='card card-text d-inline-block p-2 px-3 m-1'></div>"
+     // msgbox.append(div)
+     // const mssgbox=document.getElementById('mssgbox')
+     // mssgbox.innerText=message;
+      //return message
+    const msgelement = document.createElement('div')
+    msgelement.innerText = message
+    messageContainer.append(msgelement)
+    }
+
 
     msgform.addEventListener('submit',e=>{
       e.preventDefault()
@@ -56,12 +76,7 @@ multibtn.addEventListener('click',beginmultiplayer)
       messagedata.value=''
     })
 
-    function msglist(message){
-      var msgblock=document.createElement('div')
-      msgblock.innerText=message
-      msgwrap.appendChild(msgblock)
-    }
-
+    
     socket.on('playerno',num=>{
       if(num==-1){
         showdetails.innerHTML="Sorry! We are Full!!!"
