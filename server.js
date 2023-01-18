@@ -2,6 +2,7 @@ const express=require('express')
 const path = require('path')
 const http = require('http')
 const socketio = require('socket.io')
+const Client = require('socket.io/lib/client')
 const app=express()
 const server=http.createServer(app)
 const io=socketio(server)
@@ -19,12 +20,6 @@ const uri = "mongodb+srv://vishwapinnawala:9ieB5p6ohbsEZqT8@cluster0.3qufw4p.mon
   //}
   //const result = haiku.insertOne(doc);
 
-mongo.connect(uri,function(err, db){
-    if(err){
-        throw err;
-    }
-    console.log('MongoDB Connected')
-});
 
 app.use(express.static(path.join(__dirname,"Client")))
 
