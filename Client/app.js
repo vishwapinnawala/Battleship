@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
    const msgform=document.getElementById('sendwrapper')
    const messagedata=document.getElementById('msginput')
    const msgwrap=document.getElementById('msgwrapper')
+   const playername=prompt("Enter Player Name","");
    var starttime=""
    var timer=""
   let gamemod=""
@@ -59,6 +60,8 @@ multibtn.addEventListener('click',beginmultiplayer)
 
  messageContainer.append(msgelement)
  }
+
+ 
 
 
 
@@ -119,7 +122,7 @@ socket.on('checkplayers',players=>{
 startbtn.addEventListener('click',()=>{
   if(shipsplaced){
     multiplaygame(socket)
-  starttime=Date.now()
+  starttime=Date.now();
    
     
   }
@@ -179,7 +182,7 @@ function playerconnectstatus(num){//display player connections
 
   function beginsingleplayer(){
     gamemod="single"
-  
+    starttime=Date.now();
     for (let i = 0; i < 5; i++) {
       generate(shipsarray[i])
     }
@@ -331,6 +334,7 @@ function playerconnectstatus(num){//display player connections
 
 
   function singleplayfunct() {
+    
     if (ifGameOver) return
     if (currentPlayer === 'player') {
       yourturn.innerHTML = 'Play Now'
@@ -438,8 +442,13 @@ function playerconnectstatus(num){//display player connections
       (destroyerC + submarineC + cruiserC + battleshipC + carrierC) === 50) 
     {
       showdetails.innerHTML = "You Won :)"
+
+     
       timer = (Date.now() - starttime)/1000
       console.log(timer)
+      const socket=io();
+      socket.emit('highscores',{ name: playername, score: timer});
+      
       finish()
     }
     if (
