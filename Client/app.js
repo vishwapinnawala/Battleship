@@ -70,12 +70,12 @@ multibtn.addEventListener('click',beginmultiplayer)
    
 
 
-    msgform.addEventListener('submit',e=>{
+ /*   msgform.addEventListener('submit',e=>{
       e.preventDefault()
       const message=messagedata.value
       socket.emit('sendmsg',message)
       messagedata.value=''
-    })
+    })*/
 
     
     socket.on('playerno',num=>{
