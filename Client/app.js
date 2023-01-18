@@ -44,7 +44,7 @@ multibtn.addEventListener('click',beginmultiplayer)
     const msgform=document.getElementById('sendwrapper')
     const messagedata=document.getElementById('msginput')
     const msgwrap=document.getElementById('msgwrapper')
-    const msgwraphome=document.getElementById('msgwrapper-home')
+    
     socket.on('chatmsg',msg=>{
       console.log(msg);
       msglist(msg)
