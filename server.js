@@ -20,12 +20,13 @@ const uri = "mongodb+srv://vishwapinnawala:9ieB5p6ohbsEZqT8@cluster0.3qufw4p.mon
   //}
   //const result = haiku.insertOne(doc);
 
-
 app.use(express.static(path.join(__dirname,"Client")))
 
 server.listen(port,()=>console.log("Server running on port "+port))
 const connections=[null,null]
 io.on('connection',(sock)=>{
+
+    sock.emit('chatmsg','Hellloooo');
    //console.log('Someone Connected');
     //sock.emit('message','You Connected to Server!');
   let playerno=-1;

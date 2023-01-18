@@ -36,9 +36,24 @@ multibtn.addEventListener('click',beginmultiplayer)
 
   
 
+
+
   function beginmultiplayer(){
     gamemode="multi"
     const socket=io();
+    const msgform=document.getElementById('sendwrapper')
+    const messagedata=document.getElementById('msginput')
+
+    socket.on('chatmsg',msg=>{
+      console.log(msg);
+    })
+
+    msgform.addEventListener('submit',e=>{
+      e.preventDefault()
+      const message=messagedata.value
+      socket.emit('sendmsg',message)
+      messagedata.value=''
+    })
 
     socket.on('playerno',num=>{
       if(num==-1){
