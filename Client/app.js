@@ -17,6 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
   const multibtn = document.querySelector('#multiplayerbtn')
   const yourturn = document.querySelector('#yourgo')
   const showdetails = document.querySelector('#detail')
+  const messageContainer = document.getElementById('messagewrap')
+   const msgform=document.getElementById('sendwrapper')
+   const messagedata=document.getElementById('msginput')
+   const msgwrap=document.getElementById('msgwrapper')
   let gamemod=""
   let playernum=0
   let status=false
@@ -35,7 +39,7 @@ multibtn.addEventListener('click',beginmultiplayer)
   let width=10
 
   
-  //function msglist(message){
+  function msglist(message){
     //var div=document.createElement('div')
     //div.innerHTML="<div id='msgbox' class='card card-text d-inline-block p-2 px-3 m-1'></div>"
     //message
@@ -48,20 +52,19 @@ multibtn.addEventListener('click',beginmultiplayer)
    // const mssgbox=document.getElementById('mssgbox')
    // mssgbox.innerText=message;
     //return message
- // const msgelement = document.createElement('div')
- // msgelement.innerText = message
- // messageContainer.append(msgelement)
- // }
+ const msgelement = document.createElement('div')
+ msgelement.innerText = message
+
+ messageContainer.append(msgelement)
+ }
 
 
 
   function beginmultiplayer(){
     gamemode="multi"
     const socket=io();
-   // const msgform=document.getElementById('sendwrapper')
-    //const messagedata=document.getElementById('msginput')
-    //const msgwrap=document.getElementById('msgwrapper')
-    //const messageContainer = document.getElementById('messagewrap')
+    
+  
     socket.on('chatmsg',msg=>{
       console.log(msg);
       msglist(msg)
@@ -70,12 +73,12 @@ multibtn.addEventListener('click',beginmultiplayer)
    
 
 
- /*   msgform.addEventListener('submit',e=>{
+   msgform.addEventListener('submit',e=>{
       e.preventDefault()
       const message=messagedata.value
       socket.emit('sendmsg',message)
       messagedata.value=''
-    })*/
+    })
 
     
     socket.on('playerno',num=>{

@@ -25,11 +25,11 @@ server.listen(port,()=>console.log("Server running on port "+port))
 const connections=[null,null]
 io.on('connection',(sock)=>{
 
-    //sock.emit('chatmsg','Hellloooo');
+    sock.emit('chatmsg','Hellloooo');
 
- //   sock.on('sendmsg',message=>{
- //       sock.broadcast.emit('chatmsg',message)
-  //  })
+ sock.on('sendmsg',message=>{
+     sock.broadcast.emit('chatmsg',message)
+   })
    //console.log('Someone Connected');
     //sock.emit('message','You Connected to Server!');
   let playerno=-1;
