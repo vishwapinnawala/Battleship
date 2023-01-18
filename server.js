@@ -7,8 +7,8 @@ const server=http.createServer(app)
 const io=socketio(server)
 const port = process.env.PORT || 3000 
 //const { MongoClient, ServerApiVersion } = require('mongodb');
-const mongo=require('mongodb').MongoClient;
-const uri = "mongodb+srv://vishwapinnawala:9ieB5p6ohbsEZqT8@cluster0.3qufw4p.mongodb.net/Battleship?retryWrites=true&w=majority";
+//const mongo=require('mongodb').MongoClient;
+//const uri = "mongodb+srv://vishwapinnawala:9ieB5p6ohbsEZqT8@cluster0.3qufw4p.mongodb.net/Battleship?retryWrites=true&w=majority";
 //const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
 //const database = client.db("Battleship");
@@ -25,11 +25,11 @@ server.listen(port,()=>console.log("Server running on port "+port))
 const connections=[null,null]
 io.on('connection',(sock)=>{
 
-    sock.emit('chatmsg','Hellloooo');
+    //sock.emit('chatmsg','Hellloooo');
 
-    sock.on('sendmsg',message=>{
-        sock.broadcast.emit('chatmsg',message)
-    })
+ //   sock.on('sendmsg',message=>{
+ //       sock.broadcast.emit('chatmsg',message)
+  //  })
    //console.log('Someone Connected');
     //sock.emit('message','You Connected to Server!');
   let playerno=-1;
