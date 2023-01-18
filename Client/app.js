@@ -43,9 +43,10 @@ multibtn.addEventListener('click',beginmultiplayer)
     const socket=io();
     const msgform=document.getElementById('sendwrapper')
     const messagedata=document.getElementById('msginput')
-
+    const msgwrap=document.getElementById('msgwrapper')
     socket.on('chatmsg',msg=>{
       console.log(msg);
+      msglist(msg)
     })
 
     msgform.addEventListener('submit',e=>{
@@ -54,6 +55,12 @@ multibtn.addEventListener('click',beginmultiplayer)
       socket.emit('sendmsg',message)
       messagedata.value=''
     })
+
+    function msglist(message){
+      var msgblock=document.createElement('div')
+      msgblock.innerText=message
+      msgwrap.appendChild(msgblock)
+    }
 
     socket.on('playerno',num=>{
       if(num==-1){

@@ -29,7 +29,7 @@ io.on('connection',(sock)=>{
     sock.emit('chatmsg','Hellloooo');
 
     sock.on('sendmsg',message=>{
-        console.log(message)
+        sock.broadcast.emit('chatmsg',message)
     })
    //console.log('Someone Connected');
     //sock.emit('message','You Connected to Server!');
