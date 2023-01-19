@@ -1,3 +1,51 @@
+body{
+    background-color: #7a7a7a;
+    margin: 0;
+}
+*,*::before,*::after{
+    font-family: 'Mont';
+    font-family: 'Ubuntu', sans-serif;
+
+}
+.shipwrap{
+    min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+   
+}
+.buttn{
+    color: #333;
+    padding: .5rem 1em;
+    border-radius: 0.3rem;
+    background-color: rgba(224, 139, 12, 0.925);
+    font-size: 2rem;
+    text-decoration: none;
+    margin-left: 2rem;
+
+}
+.buttn:hover,.buttn:focus{
+    background-color: rgba(206, 124, 1, 0.925);
+}
+
+.mainwrapper{
+    margin-top: 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    background-color: rgba(5, 5, 5, 0.171);
+}
+
+.wrappertitle{
+    font-family: 'Plaguard', sans-serif;
+    font-size: 5rem;
+}
 /*!
  * Load Awesome v1.1.0 (http://github.danielcardoso.net/load-awesome/)
  * Copyright 2015 Daniel Cardoso <@DanielCardoso>

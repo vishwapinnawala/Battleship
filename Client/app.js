@@ -30,9 +30,15 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
   let enemystatus=false
   let shipsplaced=false
   let boomfires=-1
+
+  if(gamemod=='single'){
+    beginsingleplayer();
+  }else{
+    beginmultiplayer();
+  }
   
-singlebtn.addEventListener('click',beginsingleplayer)
-multibtn.addEventListener('click',beginmultiplayer)
+//singlebtn.addEventListener('click',beginsingleplayer)
+//multibtn.addEventListener('click',beginmultiplayer)
   
   const userblocks = []
   const botblocks = []
@@ -66,7 +72,7 @@ multibtn.addEventListener('click',beginmultiplayer)
 
 
   function beginmultiplayer(){
-    gamemode="multi"
+    //gamemode="multi"
     const socket=io();
     
   
@@ -181,7 +187,7 @@ function playerconnectstatus(num){//display player connections
   }
 
   function beginsingleplayer(){
-    gamemod="single"
+    //gamemod="single"
     starttime=Date.now();
     for (let i = 0; i < 5; i++) {
       generate(shipsarray[i])
