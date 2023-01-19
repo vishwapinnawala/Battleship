@@ -41,6 +41,16 @@ body{
     height: 50vh;
     background-color: rgba(5, 5, 5, 0.171);
 }
+.container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.shipgrid{
+display: grid;
+    margin:2vin;
+
+}
 
 .wrappertitle{
     font-family: 'Plaguard', sans-serif;
