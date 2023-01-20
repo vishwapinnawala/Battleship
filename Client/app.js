@@ -326,12 +326,14 @@ function playerconnectstatus(num){//display player connections
 
     if (ifHorizontal && !newNotAllowedHorizontal.includes(lastshipid)) {
       for (let i=0; i < selectedshiplegth; i++) {
-        userblocks[parseInt(this.dataset.id) - selectedShipIndex + i].classList.add('taken', shipsclass)
+        let dir; if(i===0){dir='start'}if(i===selectedshiplegth-1){dir='end'}
+        userblocks[parseInt(this.dataset.id) - selectedShipIndex + i].classList.add('taken','horizon',dir, shipsclass)
       }
 
     } else if (!ifHorizontal && !newNotAllowedVertical.includes(lastshipid)) {
       for (let i=0; i < selectedshiplegth; i++) {
-        userblocks[parseInt(this.dataset.id) - selectedShipIndex + width*i].classList.add('taken', shipsclass)
+        let dir; if(i===0){dir='start'}if(i===selectedshiplegth-1){dir='end'}
+        userblocks[parseInt(this.dataset.id) - selectedShipIndex + width*i].classList.add('taken','verti',dir,shipsclass)
       }
     } else return
 
@@ -351,7 +353,7 @@ function playerconnectstatus(num){//display player connections
       botblocks.forEach(square => square.addEventListener('click', function(e) {boomfires=square.dataset.id, showblocks(square.classList) }))
     }
     if (currentPlayer === 'bot') {
-      yourturn.innerHTML = "Computer's Turn"
+      yourturn.innerHTML = "Enemy's Turn"
       setTimeout(botturn, 1000)
     }
   }

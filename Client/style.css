@@ -34,6 +34,7 @@ z-index: -1;
   background-color: rgba(206, 124, 1, 0.925);
 }
 .buttn2{
+  border: none;
   color: #333;
   padding: .5rem 1em;
   border-radius: 0.3rem;
@@ -74,6 +75,12 @@ z-index: -1;
   grid-template-rows: repeat(10, 4.6vmin);
   grid-template-columns: repeat(10, 4.6vmin);
 }
+
+.computergrid>.taken{
+  background-color: rgb(19 209 234);
+  border-radius: 0 !important;  
+}
+
 
 .taken,.ship{
   position: relative;
@@ -147,7 +154,9 @@ z-index: -1;
  
  
   .miss {
-    background-color: black;
+    background-image: url(/miss.gif);
+    background-position: center; 
+    background-size: cover;   
  }
  
   .destroyer {
@@ -172,9 +181,39 @@ z-index: -1;
     
   }
   .boom {
-    background-color: red;
+    background-image: url(/fire.gif);
+    background-position: center; 
+    background-size: cover;   
+  }
+  .textt{
+    font-size: 1.5rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    
   }
 
+  .taken.verti.start{
+   border-top-left-radius: 50%; 
+   border-top-right-radius: 50%;
+   
+  }
+  .taken.verti.end{
+    border-bottom-left-radius: 50%; 
+    border-bottom-right-radius: 50%;
+   }
+
+   .taken.horizon.start{
+    border-top-left-radius: 50%; 
+    border-bottom-left-radius: 50%; 
+   
+    
+   }
+   .taken.horizon.end{
+    border-top-right-radius: 50%;
+     border-bottom-right-radius: 50%;
+    }
+   
   .connected, .ready{
     font-weight: normal;
   }
