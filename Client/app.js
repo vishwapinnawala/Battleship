@@ -57,7 +57,7 @@ generateboard(botboard, botblocks) // generting the computers board
   if(gamemod=='single'){
     beginsingleplayer();
   }else{
-    gamemod="multi"
+    
     beginmultiplayer();
   }
 

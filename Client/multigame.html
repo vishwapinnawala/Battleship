@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
   </head>
+  <script>const gamemod="multi"</script>
   <body >
 
     
@@ -28,10 +29,10 @@
   <div class="connected">Connected <span></span></div>
   <div class="ready">Ready <span></span></div>
 </div>
-    <div class="container">
-        <div class="grid usergrid"></div>
-        <div class="grid computergrid"></div>
-    </div>
+<div class="container">
+  <div class="grid shipgrid usergrid"></div>
+  <div class="grid shipgrid computergrid"></div>
+</div>
 
     <div class="hiddendata">
       <button id="startbtn">Start Game</button>
@@ -39,17 +40,18 @@
       <h3 id="yourgo">Your Go</h3>
       <h3 id="detail"></h3>
     </div>
-
-    <div class="shipselector">
-     
-    <div class="ship destroyerwrap" draggable="true"><div id="destroyer-0"></div><div id="destroyer-1"></div></div>
-    <div class="ship submarinewrap" draggable="true"><div id="submarine-0"></div><div id="submarine-1"></div><div id="submarine-2"></div></div>
-    <div class="ship cruiserwrap" draggable="true"><div id="cruiser-0"></div><div id="cruiser-1"></div><div id="cruiser-2"></div></div>
-    <div class="ship battleshipwrap" draggable="true"><div id="battleship-0"></div><div id="battleship-1"></div><div id="battleship-2"></div><div id="battleship-3"></div></div>
-    <div class="ship carrierwrap" draggable="true"><div id="carrier-0"></div><div id="carrier-1"></div><div id="carrier-2"></div><div id="carrier-3"></div><div id="carrier-4"></div></div>
-
-      </div>
-      </div>
+    <div class="container">
+      <div class="shipselector">
+       
+      <div class="ship destroyerwrap" draggable="true"><div id="destroyer-0"></div><div id="destroyer-1"></div></div>
+      <div class="ship submarinewrap" draggable="true"><div id="submarine-0"></div><div id="submarine-1"></div><div id="submarine-2"></div></div>
+      <div class="ship cruiserwrap" draggable="true"><div id="cruiser-0"></div><div id="cruiser-1"></div><div id="cruiser-2"></div></div>
+      <div class="ship battleshipwrap" draggable="true"><div id="battleship-0"></div><div id="battleship-1"></div><div id="battleship-2"></div><div id="battleship-3"></div></div>
+      <div class="ship carrierwrap" draggable="true"><div id="carrier-0"></div><div id="carrier-1"></div><div id="carrier-2"></div><div id="carrier-3"></div><div id="carrier-4"></div></div>
+  
+        </div>
+        </div>
+  </div>
 
      
 

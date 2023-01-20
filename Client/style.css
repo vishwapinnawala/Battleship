@@ -33,7 +33,19 @@ z-index: -1;
 .buttn:hover,.buttn:focus{
   background-color: rgba(206, 124, 1, 0.925);
 }
+.buttn2{
+  color: #333;
+  padding: .5rem 1em;
+  border-radius: 0.3rem;
+  background-color: rgba(224, 139, 12, 0.925);
+  font-size: 1rem;
+  text-decoration: none;
+  margin-left: 2rem;
 
+}
+.buttn2:hover,.buttn2:focus{
+  background-color: rgba(206, 124, 1, 0.925);
+}
 .mainwrapper{
   margin-top: 8%;
   display: flex;
@@ -59,109 +71,80 @@ z-index: -1;
   margin: 2vmin;
   display: grid;
   background-color: rgba(0, 225, 255, 0.842);
-  grid-template-rows: repeat(10, 6vmin);
-  grid-template-columns: repeat(10, 6vmin);
+  grid-template-rows: repeat(10, 4.6vmin);
+  grid-template-columns: repeat(10, 4.6vmin);
 }
 
 .taken,.ship{
+  position: relative;
   background-color: rgba(221, 218, 218, 0.774);
   
 }
+ 
+.shipselector {
+  display: flex;
+}
 
 
-  
+.ship > div{
+  width: 4.6vmin;
+  height: 4.6vmin;
+}
+
+.ship{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1vmin;
+  width: calc(4.6vmin * var(--width, 1));
+  height: calc(4.6vmin * var(--height, 1));
+  border-radius: 2.3vmin;
+}
+
 
   .shipgrid div {
     border: 1px solid rgba(247, 247, 247, 0.17);
   }
 
 
-  .shipselector {
-    width: 400px;
-    height: 400px;
-    margin: 20px;
-    background-color: yellow;
-  }
+  
   .destroyerwrap {
-    width: 80px;
-    height: 40px;
-   
-    margin: 10px;
-    display: flex;
+    --width:2;
   }
   .destroyer-verticle {
-    width: 40px;
-    height: 80px;
-    
-    margin: 10px;
-    display: flex;
-    flex-wrap: wrap;
+    --width: 1;
+    --height:2;
   }
   .submarinewrap {
-    width: 120px;
-    height: 40px;
-   
-    margin: 10px;
-    display: flex;
+    --width:3;
   }
   .submarine-verticle{
-    width: 40px;
-    height: 120px;
-   
-    margin: 10px;
-    display: flex;
-    flex-wrap: wrap;
+    --width: 1;
+    --height:3;
   }
   .cruiserwrap {
-    width: 120px;
-    height: 40px;
-    
-    margin: 10px;
-    display: flex;
+    --width:3;
   }
   .cruiser-verticle {
-    width: 40px;
-    height: 120px;
-    
-    margin: 10px;
-    display: flex;
-    flex-wrap: wrap;
+    --width: 1;
+    --height:3;
   }
   .battleshipwrap {
-    width: 160px;
-    height: 40px;
-    
-    margin: 10px;
-    display: flex;
+    --width:4;
+   
   }
 
   .battleship-verticle {
-    width: 40px;
-    height: 160px;
-    
-    margin: 10px;
-    display: flex;
-    flex-wrap: wrap;
+    --width: 1;
+    --height:4;
   }
   .carrierwrap{
-    width: 200px;
-    height: 40px;
-    
-    margin: 10px;
-    display: flex;
+    --width:5;
   }
   .carrier-verticle {
-    width: 40px;
-    height: 200px;
-    
-    margin: 10px;
-    display: flex;
-    flex-wrap: wrap;
+    --width: 1;
+    --height:5;
   }
-  .ship div {
-    width: 40px;
-    height: 40px;
-  }
+ 
  
   .miss {
     background-color: black;
