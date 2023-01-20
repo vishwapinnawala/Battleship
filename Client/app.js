@@ -24,18 +24,13 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
    const playername=prompt("Enter Player Name","");
    var starttime=""
    var timer=""
-  let gamemod=""
+  //let gamemod=""
   let playernum=0
   let status=false
   let enemystatus=false
   let shipsplaced=false
   let boomfires=-1
 
-  if(gamemod=='single'){
-    beginsingleplayer();
-  }else{
-    beginmultiplayer();
-  }
   
 //singlebtn.addEventListener('click',beginsingleplayer)
 //multibtn.addEventListener('click',beginmultiplayer)
@@ -48,6 +43,24 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
   let width=10
 
   
+  const shipsarray = [//Making the ship sizes
+  {name: 'destroyer',directions: [[0, 1],[0, width]]},
+  {name: 'submarine',directions: [[0, 1, 2],[0, width, width*2]]},
+  {name: 'cruiser',directions: [[0, 1, 2],[0, width, width*2]]},
+  {name: 'battleship',directions: [[0, 1, 2, 3],[0, width, width*2, width*3]]},
+  {name: 'carrier',directions: [[0, 1, 2, 3, 4],[0, width, width*2, width*3, width*4]]},
+]
+generateboard(userboard, userblocks)//generating the players board
+generateboard(botboard, botblocks) // generting the computers board
+
+
+  if(gamemod=='single'){
+    beginsingleplayer();
+  }else{
+    gamemod="multi"
+    beginmultiplayer();
+  }
+
   function msglist(message){
     //var div=document.createElement('div')
     //div.innerHTML="<div id='msgbox' class='card card-text d-inline-block p-2 px-3 m-1'></div>"
@@ -204,16 +217,7 @@ function playerconnectstatus(num){//display player connections
     }
   }
   
-  generateboard(userboard, userblocks)//generating the players board
-  generateboard(botboard, botblocks) // generting the computers board
-
-  const shipsarray = [//Making the ship sizes
-    {name: 'destroyer',directions: [[0, 1],[0, width]]},
-    {name: 'submarine',directions: [[0, 1, 2],[0, width, width*2]]},
-    {name: 'cruiser',directions: [[0, 1, 2],[0, width, width*2]]},
-    {name: 'battleship',directions: [[0, 1, 2, 3],[0, width, width*2, width*3]]},
-    {name: 'carrier',directions: [[0, 1, 2, 3, 4],[0, width, width*2, width*3, width*4]]},
-  ]
+ 
 
   
 
