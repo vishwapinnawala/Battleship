@@ -21,7 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
    const msgform=document.getElementById('sendwrapper')
    const messagedata=document.getElementById('msginput')
    const msgwrap=document.getElementById('msgwrapper')
-   const playername=prompt("Enter Player Name","");
+   //const playername=document.cookie.match('username');
+   const playername = ('; '+document.cookie).split(`; username=`).pop().split(';')[0];
+   //prompt("Enter Player Name","");
    var starttime=""
    var timer=""
   //let gamemod=""
@@ -42,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {//Gettings Elements to Vari
   let currentPlayer = 'player'
   let width=10
 
-  
+ // console.log(playername);
   const shipsarray = [//Making the ship sizes
   {name: 'destroyer',directions: [[0, 1],[0, width]]},
   {name: 'submarine',directions: [[0, 1, 2],[0, width, width*2]]},

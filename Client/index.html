@@ -11,12 +11,28 @@
 <link href="https://fonts.googleapis.com/css2?family=Faster+One&display=swap" rel="stylesheet">
   </head>
   <body >
+    <script>
+    function getplayername()
+    {
+      const playername = document.getElementById('namefield').value
+      if(playername==null || playername=="" || playername==" "){
+        window.alert('Please Enter name');
+        //window.location.replace("http://www.w3schools.com");
+      }
+      document.cookie = 'username='+playername
+      
+  }
+  </script>
     <div class="mainwrapper">
     <h1 class="wrappertitle">Battleship Game</h1>
+    <input type="text" placeholder="Enter Your Name" id="namefield">
   
   <div>
-<a class="buttn" href="/game.html">Single Player</a>
-<a class="buttn" href="/multigame.html">MultiPlayer</a>
+    <div>
+      
+    </div>
+<a class="buttn" onclick="getplayername()" href="/game.html">Single Player</a>
+<a class="buttn" onclick="getplayername()" href="/multigame.html">MultiPlayer</a>
 </div>
 </div>
 <img src="militaristic-ships.webp" alt="" class="shipwrap">
