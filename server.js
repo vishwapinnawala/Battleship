@@ -10,7 +10,7 @@ const port = process.env.PORT || 3000
 //const mongo=require('mongodb').MongoClient;
 //const uri = "mongodb+srv://vishwapinnawala:9ieB5p6ohbsEZqT8@cluster0.3qufw4p.mongodb.net/Battleship?retryWrites=true&w=majority";
 //const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-
+//
 //const database = client.db("Battleship");
 //const haiku = database.collection("Chat");
 //const doc = {
